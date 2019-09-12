@@ -9,9 +9,12 @@ What we will do:
 *	Learn how to request your server 
 *	Learn the difference between ElasticBeanstalk and SageMaker to serve a machine learning model. (price/ limitations / benefits).
 
-
+## AWS Elastic Beanstalk
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
 School of AI mission is to build a strong community to provide AI education for free in Geneva.
+
+### LOAD BALANCER
+### Autoscaling
 
 Current Geneva School of AI subjects include ML Research, Algorithms, Programming Frameworks, Data Engineering, Cloud Platforms, Off the shelf AI, etc.
 
@@ -43,3 +46,4 @@ XX
 XX
 ## Conclusion
 Using AWS Beanstalk is an excellent way to serve a ML model. If you're already serving a model using AwS SageMaker, you might consider switching this to EBS.
+
