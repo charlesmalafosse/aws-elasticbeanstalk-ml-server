@@ -96,16 +96,23 @@ https://console.aws.amazon.com/elasticbeanstalk/
 ## 1- Create an App
 ![](images/app.png)
 ![](images/app-2.png)
+
+
+## 2- Create an Environment
 ![](images/app-3.png)
 ![](images/app-4.png)
 ![](images/app-5.png)
+![](images/app-6.png)
 
-## 2- Create an Environment
-XX
+
 ## Deploy a package
 XX
+
+
 ## Test if it works
 XX
+
+
 ## Conclusion
 Using AWS Beanstalk is an excellent way to serve a ML model. If you're already serving a model using AwS SageMaker, you might consider switching this to EBS.
 
