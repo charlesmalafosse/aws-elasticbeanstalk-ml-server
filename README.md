@@ -48,7 +48,7 @@ Auto Scaling monitors your applications and automatically adjusts capacity to ma
 ![](images/autoscaling.jpeg)
 
 ## FastText for Sentiment Analysis model
-fastText is a library for learning of word embeddings and text classification created by Facebook's AI Research lab. It is super fast and is on par with more complex, slower other algorithms.
+fastText is a library for learning of word embeddings and text classification created by Facebook's AI Research lab. It is super fast and is on par with more complex, slower algorithms.
 
 Our model was created with the fastText library provided by Facebook Research. We believe it's great choice for a production ready model. 
 
@@ -59,10 +59,17 @@ To download the trained models in English, French, Spanish, Italian and German, 
 :warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows. Install directly from the fastTest github page.
 
 :computer: **OPTIONAL:** Install fastText on your machine if you want to run locally the python code.
+```
+git clone https://github.com/facebookresearch/fastText.git
+cd fastText
+sudo pip install .
+```
+
+## Python micro web framework Flask
 
 
-# AWS
-We demonstrate the use of AWS ElasticBeanstalk to serve multiple sentiment analysis models trained with fastText. We believe it to be one the best way to handle peak in demand and robustness, through serverless and scalability.
+# Deploy on AWS ElasticBeanstalk
+Now is time to use AWS ElasticBeanstalk to serve multiple sentiment analysis models trained with fastText. We believe it to be one the best way to handle peak in demand and robustness, through serverless and scalability.
 AWS Elastic Beanstalk
 ## Start an EBS environment
 XX
