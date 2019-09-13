@@ -4,14 +4,19 @@
 ## Intro
 In this hands-on workshop we will learn how to serve a sentiment analysis model using AWS ElasticBeanstalk 
 
-What we will do:
+#### What we will do:
 *	Learn some basics of the AWS ecosystem
 *	Learn how to deploy a basic flask app on AWS ElasticBeanstalk
 *	Learn how to request your server and test your model
 *	Learn the difference between ElasticBeanstalk and SageMaker to serve a machine learning model. (price/ limitations / benefits).
 
+#### Goal
+At the end you will have a working server that provides sentiment analysis.
+
+
 ## AWS Elastic Beanstalk
 ![](images/filename.png)
+
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
 School of AI mission is to build a strong community to provide AI education for free in Geneva.
 
