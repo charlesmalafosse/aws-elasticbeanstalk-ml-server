@@ -5,9 +5,9 @@
 In this hands-on workshop we will learn how to serve a sentiment analysis model using AWS ElasticBeanstalk 
 
 What we will do:
-*	Learn the basics of the AWS ecosystem
+*	Learn some basics of the AWS ecosystem
 *	Learn how to deploy a basic flask app on AWS ElasticBeanstalk
-*	Learn how to request your server 
+*	Learn how to request your server and test your model
 *	Learn the difference between ElasticBeanstalk and SageMaker to serve a machine learning model. (price/ limitations / benefits).
 
 ## AWS Elastic Beanstalk
