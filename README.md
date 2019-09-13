@@ -56,9 +56,8 @@ This is not the goal of this tutorial but we wrote an article showing you how 
 To reproduce the model, check here: https://medium.com/@media_73863/fasttext-sentiment-analysis-for-tweets-a-straightforward-guide-9a8c070449a2
 To download the trained models in English, French, Spanish, Italian and German, check this reporitory.
 
-:warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows. Install directly from the fastTest github page.
-
 :computer: **OPTIONAL:** Install fastText on your machine if you want to run locally the python code.
+:warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows. Install directly from the fastTest github page.
 ```
 git clone https://github.com/facebookresearch/fastText.git
 cd fastText
@@ -66,6 +65,20 @@ sudo pip install .
 ```
 
 ## Python micro web framework Flask
+Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries.
+
+Flask is very simple and perfect for our needs. For example, we only need the following lines of codes to start an "Hello World" web app.
+```
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
+```
 
 
 # Deploy on AWS ElasticBeanstalk
