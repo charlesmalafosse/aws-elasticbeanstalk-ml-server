@@ -34,9 +34,9 @@ A load balancer distributes incoming application or network traffic across multi
 It uses health checks to detect which instances are healthy and directs traffic only across those instances.
 
 ### Autoscaling
+Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. 
 
-Current Geneva School of AI subjects include ML Research, Algorithms, Programming Frameworks, Data Engineering, Cloud Platforms, Off the shelf AI, etc.
-
+![](images/autoscaling.jpeg)
 
 ---
 
