@@ -106,7 +106,50 @@ https://console.aws.amazon.com/elasticbeanstalk/
 
 
 ## Deploy a package
-XX
+We just deployed an elastic Beanstalk sample app. Now we will replace this package with our app.
+
+### Flask App
+
+### Flask App
+
+* application.py
+* 00_application.config
+```
+commands:
+  01_dev_tools:
+    command: sudo yum groupinstall -y "Development Tools"
+  02_dev_libs:
+    command: sudo yum groupinstall -y "Development Libraries"
+  03_gcc_alternatives:
+    command: sudo alternatives --set gcc "/usr/bin/gcc48"
+```
+* 01_pip-install.config
+```
+files:
+  "/tmp/pipInstallation.sh":
+    mode: "000777"
+    owner: root
+    group: root
+    content: |
+      #! /bin/bash
+      source /opt/python/run/venv/bin/activate
+      pip install beautifulsoup4==4.7.1
+      pip install boto3==1.9.86
+      ... (check github files for complete list)
+      pip install Werkzeug==0.14.1
+      git clone https://github.com/facebookresearch/fastText.git
+      cd fastText
+      pip install .
+
+commands:
+  01_execute:
+    command: "/tmp/pipInstallation.sh"
+```
+### S3 file server with models
+
+We store our trained models on a S3 bucket. That way, a simple reboot of our instances will ensure up to date models.
+
+
 
 
 ## Test if it works
