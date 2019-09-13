@@ -11,6 +11,7 @@ What we will do:
 *	Learn the difference between ElasticBeanstalk and SageMaker to serve a machine learning model. (price/ limitations / benefits).
 
 ## AWS Elastic Beanstalk
+![](images/filename.png)
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
 School of AI mission is to build a strong community to provide AI education for free in Geneva.
 
