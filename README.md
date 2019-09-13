@@ -94,7 +94,6 @@ https://console.aws.amazon.com/elasticbeanstalk/
 
 ## 1- Create an App
 ![](images/app.png)
-![](images/app-1.png)
 ![](images/app-2.png)
 ![](images/app-3.png)
 ![](images/app-4.png)
