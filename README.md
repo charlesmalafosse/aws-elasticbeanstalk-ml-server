@@ -109,7 +109,8 @@ https://console.aws.amazon.com/elasticbeanstalk/
 We just deployed an elastic Beanstalk sample app. Now we will replace this package with our app.
 
 ### Flask App
-
+Modify application.py
+Add location of models in your S3 buckets
 
 ### EB Config files
 
