@@ -33,7 +33,7 @@ AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web ap
 
 Simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, **load balancing**, **auto-scaling** to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.
 
-:computer: TO-DO: Create an AWS account to access Elastic Beanstalk
+:computer: **TO-DO:** Create an AWS account to access Elastic Beanstalk
 
 ### Load balancer
 A load balancer distributes incoming application or network traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses, in multiple Availability Zones.
@@ -58,7 +58,7 @@ To download the trained models in English, French, Spanish, Italian and German, 
 
 :warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows. Install directly from the fastTest github page.
 
-:computer: OPTIONAL: Install fastText on your machine if you want to run locally the python code.
+:computer: **OPTIONAL:** Install fastText on your machine if you want to run locally the python code.
 
 
 # AWS
