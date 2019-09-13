@@ -114,6 +114,21 @@ We just deployed an elastic Beanstalk sample app. Now we will replace this packa
 Modify application.py
 Add location of models in your S3 buckets
 
+The app has the following functions:
+* hello(): Root route '/'. For test only.
+* ping(): Determine if the container is working and healthy. In this sample container, we declare
+    it healthy if we can load the model successfully.
+* transformation(): Inference on a single batch of data
+
+Rest of the code is about text cleaning for better sentiment analysis.
+ 
+Finally the Flask app starts with the following command: 
+ ```
+if __name__ == '__main__':
+    application.run()
+ ```
+ 
+ 
 ### EB Config files
 
 * application.py
@@ -157,10 +172,11 @@ We store our trained models on a S3 bucket. That way, a simple reboot of our ins
 
 
 
-
 ## Test if it works
-XX
-
+/ping
+/invocations
+{text:"This is great!"
+,language:"US"}
 
 ## Conclusion
 Using AWS Beanstalk is an excellent way to serve a ML model. If you're already serving a model using AwS SageMaker, you might consider switching this to EBS.
