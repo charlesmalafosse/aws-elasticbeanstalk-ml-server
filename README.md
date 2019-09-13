@@ -104,6 +104,8 @@ https://console.aws.amazon.com/elasticbeanstalk/
 ![](images/app-5.png)
 ![](images/app-6.png)
 
+![](images/app-7-instance.png)
+![](images/app-8-scaling.png)
 
 ## Deploy a package
 We just deployed an elastic Beanstalk sample app. Now we will replace this package with our app.
