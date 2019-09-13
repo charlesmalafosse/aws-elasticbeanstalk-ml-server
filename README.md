@@ -23,9 +23,16 @@ At the end you will have a working server that provides sentiment analysis.
 ![](images/filename.png)
 
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
-School of AI mission is to build a strong community to provide AI education for free in Geneva.
 
-### LOAD BALANCER
+Simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, **load balancing**, **auto-scaling** to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.
+
+### Load balancer
+A load balancer distributes incoming application or network traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses, in multiple Availability Zones.
+
+![](images/elb.png)
+
+It uses health checks to detect which instances are healthy and directs traffic only across those instances.
+
 ### Autoscaling
 
 Current Geneva School of AI subjects include ML Research, Algorithms, Programming Frameworks, Data Engineering, Cloud Platforms, Off the shelf AI, etc.
