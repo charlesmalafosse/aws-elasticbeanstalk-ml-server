@@ -1,7 +1,7 @@
 # School of AI Geneva
-# How to Serve a machine learning model with AWS ElasticBeanstalk 
+## How to Serve a machine learning model with AWS ElasticBeanstalk 
 
-## Intro
+# Intro
 In this hands-on workshop we will learn how to serve a sentiment analysis model using AWS ElasticBeanstalk 
 
 #### What we will do:
@@ -17,6 +17,13 @@ At the end you will have a working server that provides sentiment analysis.
 * An AWS account. Create an AWS account (it's free) before the meetup. Accounts are usually activated within a few minutes, but the process might take up to 24 hours. 
 * Basic knowledge of Python
 * Willingness to spend a few cents to use AWS resources. Please note however that AWS ElasticBeanstalk is free and other resources might fall under AWS free tier program.
+
+# Overview of what we'll need to deploy our model
+
+To deploy our model we will need to use:
+* AWS Elastic Beanstalk, a web application deployment service 
+* FastText, a Facebook Research library for text classification.
+* Python, and in particular Flask, a micro web framework. It is classified as a microframework because it does not require particular tools or libraries. 
 
 
 ## AWS Elastic Beanstalk
@@ -38,25 +45,18 @@ Auto Scaling monitors your applications and automatically adjusts capacity to ma
 
 ![](images/autoscaling.jpeg)
 
----
+## Our Sentiment Analysis model with Fasttext
+Our model was created with the fastText library provided by Facebook Research. We believe it's great choice for a production ready model. 
 
-Serving machine learning models with AWS ElasticBeanstalk 
-A concise tutorial on how to use AWS ElasticBeanstalk to serve a multi language fastText model.
-
-
----
-
-In this post, we demonstrate the use of AWS ElasticBeanstalk to serve multiple sentiment analysis models trained with fastText. We believe it to be one the best way to handle peak in demand and robustness, through serverless and scalability.
-AWS Elastic Beanstalk
-
-Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS. It is an excellent choice for deploying a model as it provides scalability, monitoring while paying only the consumed resources (EC2 instances and an (optional) load balancer. Depending on the usage, it might cost you as little as 10$ per month.
-TO CHECK; the excellent AWS Sagemaker server of model, uses something close to EBS but priced higher, so you migth want to check this post to see how you can save money (and check Julien Simon's great post on how to save even more on AWS sagemaker).
-
-## Fasttext for sentiment analysis
-We implement a fastText model. We believe a great choice for a production ready model. We even wrote an article - link - showing how to do that - and provide data in English, Spanish, Italian, French, German, to train your own - link -
+Not the goal of this tutorial but we wrote an article showing you how to do that.
 To reproduce the model, check here: https://medium.com/@media_73863/fasttext-sentiment-analysis-for-tweets-a-straightforward-guide-9a8c070449a2
-To just download files, check the GitHub page.
+To download the trained models in English, French, Spanish, Italian and German, check this GitHub reporitory.
 
+
+
+# AWS
+We demonstrate the use of AWS ElasticBeanstalk to serve multiple sentiment analysis models trained with fastText. We believe it to be one the best way to handle peak in demand and robustness, through serverless and scalability.
+AWS Elastic Beanstalk
 ## Start an EBS environment
 XX
 ## Deploy a package
@@ -65,4 +65,9 @@ XX
 XX
 ## Conclusion
 Using AWS Beanstalk is an excellent way to serve a ML model. If you're already serving a model using AwS SageMaker, you might consider switching this to EBS.
+
+
+
+Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS. It is an excellent choice for deploying a model as it provides scalability, monitoring while paying only the consumed resources (EC2 instances and an (optional) load balancer. Depending on the usage, it might cost you as little as 10$ per month.
+TO CHECK; the excellent AWS Sagemaker server of model, uses something close to EBS but priced higher, so you migth want to check this post to see how you can save money (and check Julien Simon's great post on how to save even more on AWS sagemaker).
 
