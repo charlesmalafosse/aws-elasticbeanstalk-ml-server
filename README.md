@@ -85,10 +85,22 @@ if __name__ == "__main__":
  pip install Flask
  ```
 
+
+
 # Deploy on AWS ElasticBeanstalk
-Now is time to use AWS ElasticBeanstalk to serve multiple sentiment analysis models trained with fastText. We believe it to be one the best way to handle peak in demand and robustness, through serverless and scalability.
-AWS Elastic Beanstalk
-## Start an EBS environment
+Now is time to use AWS ElasticBeanstalk to serve multiple sentiment analysis models trained with fastText. 
+
+https://console.aws.amazon.com/elasticbeanstalk/
+
+## 1- Create an App
+![](images/app.png)
+![](images/app-1.png)
+![](images/app-2.png)
+![](images/app-3.png)
+![](images/app-4.png)
+![](images/app-5.png)
+
+## 2- Create an Environment
 XX
 ## Deploy a package
 XX
