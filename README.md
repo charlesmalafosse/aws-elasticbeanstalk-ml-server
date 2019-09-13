@@ -33,6 +33,8 @@ AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web ap
 
 Simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, **load balancing**, **auto-scaling** to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.
 
+:computer: TO-DO: Create an AWS account to access Elastic Beanstalk
+
 ### Load balancer
 A load balancer distributes incoming application or network traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses, in multiple Availability Zones.
 
@@ -45,13 +47,18 @@ Auto Scaling monitors your applications and automatically adjusts capacity to ma
 
 ![](images/autoscaling.jpeg)
 
-## Our Sentiment Analysis model with Fasttext
+## FastText for Sentiment Analysis model
+fastText is a library for learning of word embeddings and text classification created by Facebook's AI Research lab. It is super fast and is on par with more complex, slower other algorithms.
+
 Our model was created with the fastText library provided by Facebook Research. We believe it's great choice for a production ready model. 
 
-Not the goal of this tutorial but we wrote an article showing you how to do that.
+This is not the goal of this tutorial but we wrote an article showing you how to do that.
 To reproduce the model, check here: https://medium.com/@media_73863/fasttext-sentiment-analysis-for-tweets-a-straightforward-guide-9a8c070449a2
-To download the trained models in English, French, Spanish, Italian and German, check this GitHub reporitory.
+To download the trained models in English, French, Spanish, Italian and German, check this reporitory.
 
+:warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows. Install directly from the fastTest github page.
+
+:computer: OPTIONAL: Install fastText on your machine if you want to run locally the python code.
 
 
 # AWS
