@@ -14,7 +14,7 @@ In this hands-on workshop we will learn how to serve a sentiment analysis model 
 At the end you will have a working server that provides sentiment analysis.
 
 #### Pre-requisites
-* An AWS account. Create an AWS account (it's free) before the meetup. Accounts are usually activated within a few minutes, but the process might take up to 24 hours. 
+* :warning: An AWS account. Create an AWS account (it's free) before the meetup. Accounts are usually activated within a few minutes, but the process might take up to 24 hours. 
 * Basic knowledge of Python
 * Willingness to spend a few cents to use AWS resources. Please note however that AWS ElasticBeanstalk is free and other resources might fall under AWS free tier program.
 
