@@ -57,6 +57,7 @@ To reproduce the model, check here: https://medium.com/@media_73863/fasttext-sen
 To download the trained models in English, French, Spanish, Italian and German, check this reporitory.
 
 :computer: **OPTIONAL:** Install fastText on your machine if you want to run locally the python code.
+
 :warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows. Install directly from the fastTest github page.
 ```
 git clone https://github.com/facebookresearch/fastText.git
