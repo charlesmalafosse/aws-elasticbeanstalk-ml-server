@@ -110,7 +110,8 @@ We just deployed an elastic Beanstalk sample app. Now we will replace this packa
 
 ### Flask App
 
-### Flask App
+
+### EB Config files
 
 * application.py
 * 00_application.config
@@ -135,7 +136,7 @@ files:
       source /opt/python/run/venv/bin/activate
       pip install beautifulsoup4==4.7.1
       pip install boto3==1.9.86
-      ... (check github files for complete list)
+... (check github files for complete list)
       pip install Werkzeug==0.14.1
       git clone https://github.com/facebookresearch/fastText.git
       cd fastText
@@ -145,6 +146,8 @@ commands:
   01_execute:
     command: "/tmp/pipInstallation.sh"
 ```
+
+
 ### S3 file server with models
 
 We store our trained models on a S3 bucket. That way, a simple reboot of our instances will ensure up to date models.
