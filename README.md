@@ -198,6 +198,7 @@ All currently supported platform versions are listed in Elastic Beanstalk Suppor
 ### Amazon SageMaker
 What is SageMaker? Amazon SageMaker is a cloud machine-learning platform that was launched in November 2017. SageMaker enables developers to create, train, and deploy machine-learning models in the cloud.
 
+![](images/sagemaker.png)
 
 Using AWS Beanstalk is an excellent way to serve a ML model. You get scalability at a very affordable cost. If you're already serving a model using AWS SageMaker, you might consider switching this to EBS to save money.
 
@@ -213,4 +214,4 @@ That being said, nothing prevents you to export a SageMaker container and deploy
 
 (and check Julien Simon's great post on how to save even more on AWS sagemaker).
 
-## :warning: DO NOT FORGET TO TERMINATE ALL THE AWS RESOURCES WE CREATED
+## :warning: DO NOT FORGET TO TERMINATE THE AWS RESOURCES WE CREATED :warning: 
