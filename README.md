@@ -97,24 +97,25 @@ https://console.aws.amazon.com/elasticbeanstalk/
 ![](images/app.png)
 ![](images/app-2.png)
 
-Supported Platform Versions:
-*Packer Builder
-*Single Container Docker
-*Multicontainer Docker
-*Preconfigured Docker
-*Go
-*Java SE
-*Java with Tomcat
-*.NET on Windows Server with IIS
-*Node.js
-*PHP
-*Python
-*Ruby
-
 
 ## 2- Create an Environment
 ![](images/app-3.png)
 ![](images/app-4.png)
+
+Supported Platform Versions:
+* Packer Builder
+* Single Container Docker
+* Multicontainer Docker
+* Preconfigured Docker
+* Go
+* Java SE
+* Java with Tomcat
+* .NET on Windows Server with IIS
+* Node.js
+* PHP
+* Python
+* Ruby
+
 ![](images/app-5.png)
 ![](images/app-6.png)
 
