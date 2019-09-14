@@ -178,11 +178,17 @@ We store our trained models on a S3 bucket. That way, a simple reboot of our ins
 {text:"This is great!"
 ,language:"US"}
 
-## Conclusion
-Using AWS Beanstalk is an excellent way to serve a ML model. If you're already serving a model using AwS SageMaker, you might consider switching this to EBS.
+## ElasticBeanstalk Vs. SageMaker
+Using AWS Beanstalk is an excellent way to serve a ML model. You get scalability at a very affordable cost. If you're already serving a model using AwS SageMaker, you might consider switching this to EBS to save money.
+**Pros:**
+* Cheaper: Smallest instance is 10$ a month vs. 50$ for SageMaker
+* Easier when Flask app are enough
 
-:warning: DO NOT DELETE TO TERMINATE ALL THE AWS RESOURCES WE CREATED
+**Cons:**
+* SageMaker is easier if you trained in SageMaker and used estimators.
+
 
 Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS. It is an excellent choice for deploying a model as it provides scalability, monitoring while paying only the consumed resources (EC2 instances and an (optional) load balancer. Depending on the usage, it might cost you as little as 10$ per month.
 TO CHECK; the excellent AWS Sagemaker server of model, uses something close to EBS but priced higher, so you migth want to check this post to see how you can save money (and check Julien Simon's great post on how to save even more on AWS sagemaker).
 
+## :warning: DO NOT FORGET TO TERMINATE ALL THE AWS RESOURCES WE CREATED
