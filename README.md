@@ -97,6 +97,20 @@ https://console.aws.amazon.com/elasticbeanstalk/
 ![](images/app.png)
 ![](images/app-2.png)
 
+Supported Platform Versions:
+*Packer Builder
+*Single Container Docker
+*Multicontainer Docker
+*Preconfigured Docker
+*Go
+*Java SE
+*Java with Tomcat
+*.NET on Windows Server with IIS
+*Node.js
+*PHP
+*Python
+*Ruby
+
 
 ## 2- Create an Environment
 ![](images/app-3.png)
@@ -170,25 +184,33 @@ commands:
 
 We store our trained models on a S3 bucket. That way, a simple reboot of our instances will ensure up to date models.
 
+Supported Platform Versions
+All currently supported platform versions are listed in Elastic Beanstalk Supported Platforms. For direct access to the version list of a specific platform, use one of the following links.
 
 
 ## Test if it works
-/ping
-/invocations
-{text:"This is great!"
-,language:"US"}
+* /ping
+* /invocations
+    {text:"This is great!",language:"US"}
 
 ## ElasticBeanstalk Vs. SageMaker
-Using AWS Beanstalk is an excellent way to serve a ML model. You get scalability at a very affordable cost. If you're already serving a model using AwS SageMaker, you might consider switching this to EBS to save money.
-**Pros:**
+
+### Amazon SageMaker
+What is SageMaker? Amazon SageMaker is a cloud machine-learning platform that was launched in November 2017. SageMaker enables developers to create, train, and deploy machine-learning models in the cloud.
+
+
+Using AWS Beanstalk is an excellent way to serve a ML model. You get scalability at a very affordable cost. If you're already serving a model using AWS SageMaker, you might consider switching this to EBS to save money.
+
+
+### Pros:
 * Cheaper: Smallest instance is 10$ a month vs. 50$ for SageMaker
 * Easier when Flask app are enough
 
-**Cons:**
-* SageMaker is easier if you trained in SageMaker and used estimators.
+### Cons:
+* SageMaker is easier/faster to deploy if you trained in SageMaker and used estimators.
 
+That being said, nothing prevents you to export a SageMaker container and deploy it on ElasticBeanstalk. You'll get similar service but at a lower cost.
 
-Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS. It is an excellent choice for deploying a model as it provides scalability, monitoring while paying only the consumed resources (EC2 instances and an (optional) load balancer. Depending on the usage, it might cost you as little as 10$ per month.
-TO CHECK; the excellent AWS Sagemaker server of model, uses something close to EBS but priced higher, so you migth want to check this post to see how you can save money (and check Julien Simon's great post on how to save even more on AWS sagemaker).
+(and check Julien Simon's great post on how to save even more on AWS sagemaker).
 
 ## :warning: DO NOT FORGET TO TERMINATE ALL THE AWS RESOURCES WE CREATED
