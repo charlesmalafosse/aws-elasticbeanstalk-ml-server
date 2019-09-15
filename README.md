@@ -193,6 +193,8 @@ All currently supported platform versions are listed in Elastic Beanstalk Suppor
 * /ping
 * /invocations
     {text:"This is great!",language:"US"}
+    
+API POST PAYLOAD
 
 ## ElasticBeanstalk Vs. SageMaker
 
