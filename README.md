@@ -141,9 +141,11 @@ We just deployed an elastic Beanstalk sample app. Now we will replace this packa
 
 Our package contains:
 * a python file application.py, this contains our Flask app.
-* A folder with Elastic Beanstalk config files.
-    * A file 
-    * A file 
+* A folder '.ebextensions' with Elastic Beanstalk config files.
+    * A file '00_application.config': This will be executed before our instance is running.
+    * A file '01_pip-install.config': This will be executed after our instance is running and will create our python environment.
+
+
 
 ### Flask App
 Our flask app is contained in the application.py file (on this github repository).
@@ -180,8 +182,9 @@ if __name__ == '__main__':
  
  
 ### EB Config files
+Our folder '.ebextensions' contains these 2 files:
 
-* application.py
+
 * 00_application.config
 ```
 commands:
@@ -192,6 +195,8 @@ commands:
   03_gcc_alternatives:
     command: sudo alternatives --set gcc "/usr/bin/gcc48"
 ```
+
+
 * 01_pip-install.config
 ```
 files:
@@ -215,6 +220,9 @@ commands:
     command: "/tmp/pipInstallation.sh"
 ```
 
+
+### Zip it and upload/deploy
+On your environment 
 
 
 ## Test if it works
