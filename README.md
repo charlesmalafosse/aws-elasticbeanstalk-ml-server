@@ -122,14 +122,17 @@ Select **Python** for platform.
 Configurations. 
 ![](images/app-6.png)
 
-Modify Instance to T3 Micro. This a newer and cheaper version than the T2 proposed by default. 
+#### Modify Instance to T3 Micro. 
+This is a newer and cheaper version than the T2 proposed by default. 
 This page let you specify the instance type or specify a custom AMI (Amazon Machine Images). 
 ![](images/app-7-instance.png)
 
-Modify Scalability.
+#### Modify Scalability.
 We will leave it to default. We'll have a min of 1 instance and up to 4 depending on the metric you defined.
 
 Instance metrics provide information about the health of instances in your environment. The Elastic Beanstalk health agent runs on each instance. It gathers and relays metrics about instances to Elastic Beanstalk, which analyzes the metrics to determine the health of the instances in your environments.
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html
 ![](images/app-8-scaling.png)
 
 ## Deploy a package
