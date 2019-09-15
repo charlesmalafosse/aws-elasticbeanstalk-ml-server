@@ -136,7 +136,14 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwa
 ![](images/app-8-scaling.png)
 
 ## Deploy a package
-We just deployed an elastic Beanstalk sample app. Now we will replace this package with our app.
+We just deployed an elastic Beanstalk sample app. Now we will replace this package with our own.
+
+
+Our package contains:
+* a python file application.py, this contains our Flask app.
+* A folder with Elastic Beanstalk config files.
+    * A file 
+    * A file 
 
 ### Flask App
 Our flask app is contained in the application.py file (on this github repository).
@@ -145,7 +152,7 @@ Our flask app is contained in the application.py file (on this github repository
 In order to have it working you have to modify the following:
 * Create or use an S3 bucket to store our models.
 We copy our trained models on a S3 bucket. That way, a simple reboot of our instances will ensure that our models are up to date. The models can be found on this github repository.
-* Modify the application.py file to change the following with your S3 bucket name:
+* Modify the application.py file to change 'YOUR-S3-BUCKET' with the S3 bucket name that you used to store the models:
  ```
 s3 = boto3.client('s3')
 download_from_s3(s3, 'YOUR-S3-BUCKET',"model-en.ftz",'/tmp/model-en.ftz')
