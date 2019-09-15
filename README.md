@@ -222,15 +222,27 @@ commands:
 
 
 ### Zip it and upload/deploy
-On your environment 
+On your app environment, click on Update and Deploy, and upload the zip file containing the application.py and the .ebextensions folder. 
 
 
 ## Test if it works
-* /ping
-* /invocations
+To test if our model is correctly deployed, simply navigate to the endpoint of the environment. For instance : ServeSentiment-env.qnmpdqf6re.eu-west-1.elasticbeanstalk.com 
+
+
+You should see: "Welcome to your Sentiment Analysis Tool".
+
+
+Finally to test our model we will use a POST method on the resource "/invocations" defined in our Flask app. Make sure you pass the following payload: 
+```
     {text:"This is great!",language:"US"}
-    
-API POST PAYLOAD
+```
+
+
+We use the Restlet Chrome extension to test our endpoint:
+![](images/test-1.png)
+
+You should see the result with an HTTP response 200.
+![](images/test-2.png)
 
 ## ElasticBeanstalk Vs. SageMaker
 
