@@ -94,11 +94,19 @@ Now is time to use AWS ElasticBeanstalk to serve multiple sentiment analysis mod
 https://console.aws.amazon.com/elasticbeanstalk/
 
 ## 1- Create an App
+
+First we need to create an App. An Elastic Beanstalk application is a logical collection of Elastic Beanstalk components, including environments, versions, and environment configurations. In Elastic Beanstalk an application is conceptually similar to a folder.
+
 ![](images/app.png)
 ![](images/app-2.png)
 
 
 ## 2- Create an Environment
+
+Now we need to create an environment. An environment is a collection of AWS resources running an application version. Each environment runs only one application version at a time, however, you can run the same application version or different application versions in many environments simultaneously. 
+
+:grey_exclamation: When you create an environment, Elastic Beanstalk provisions the resources needed to run the application version you specified.
+
 ![](images/app-3.png)
 ![](images/app-4.png)
 
