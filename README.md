@@ -108,26 +108,28 @@ Now we need to create an environment. An environment is a collection of AWS reso
 :grey_exclamation: When you create an environment, Elastic Beanstalk provisions the resources needed to run the application version you specified.
 
 ![](images/app-3.png)
+
+Select **Web Server Environment**.
+
+Web Servers Env run web server processes (apache, nginx, etc). While Worker environment deal with long-running processes and communicate with AWS SQS.
 ![](images/app-4.png)
 
-Supported Platform Versions:
-* Packer Builder
-* Single Container Docker
-* Multicontainer Docker
-* Preconfigured Docker
-* Go
-* Java SE
-* Java with Tomcat
-* .NET on Windows Server with IIS
-* Node.js
-* PHP
-* Python
-* Ruby
+A platform is a combination of an operating system, programming language runtime, web server, application server, and Elastic Beanstalk components.
 
+Select **Python** for platform.
 ![](images/app-5.png)
+
+Configurations. 
 ![](images/app-6.png)
 
+Modify Instance to T3 Micro. This a newer and cheaper version than the T2 proposed by default. 
+This page let you specify the instance type or specify a custom AMI (Amazon Machine Images). 
 ![](images/app-7-instance.png)
+
+Modify Scalability.
+We will leave it to default. We'll have a min of 1 instance and up to 4 depending on the metric you defined.
+
+Instance metrics provide information about the health of instances in your environment. The Elastic Beanstalk health agent runs on each instance. It gathers and relays metrics about instances to Elastic Beanstalk, which analyzes the metrics to determine the health of the instances in your environments.
 ![](images/app-8-scaling.png)
 
 ## Deploy a package
