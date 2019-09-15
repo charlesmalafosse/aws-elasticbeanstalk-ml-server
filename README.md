@@ -199,22 +199,25 @@ API POST PAYLOAD
 ## ElasticBeanstalk Vs. SageMaker
 
 ### Amazon SageMaker
-What is SageMaker? Amazon SageMaker is a cloud machine-learning platform that was launched in November 2017. SageMaker enables developers to create, train, and deploy machine-learning models in the cloud.
+What is SageMaker? Amazon SageMaker is a cloud machine-learning platform that was launched in November 2017. SageMaker enables developers to create, train, and **deploy** machine-learning models in the cloud.
 
 ![](images/sagemaker.png)
 
+
 Using AWS Beanstalk is an excellent way to serve a ML model. You get scalability at a very affordable cost. If you're already serving a model using AWS SageMaker, you might consider switching this to EBS to save money.
 
+### Pros and Cons of using Elastic Beanstalk for serving ML models
+#### Pros:
+* Cheaper: Smallest instance is 10$ a month vs. 50$ for SageMaker.
+* More customization vs. SageMaker. You control and have access to all the underlying resources.
+* You can bring any ML models.
+#### Cons:
+* SageMaker is easier to deploy. Fully managed, no need to bother with underlying resources and their configuration.
+* Faster if you trained in SageMaker and used estimators. Literally just one line of code.
 
-### Pros:
-* Cheaper: Smallest instance is 10$ a month vs. 50$ for SageMaker
-* Easier when Flask app are enough
+## That's it - Time to delete the resources created
+### :warning: DO NOT FORGET TO TERMINATE THE AWS RESOURCES WE CREATED :warning: 
+* Delete AWS ElasticBeanstalk app. This will also delete the EC2 instance creted.
+* Delete S3 bucket
 
-### Cons:
-* SageMaker is easier/faster to deploy if you trained in SageMaker and used estimators.
-
-That being said, nothing prevents you to export a SageMaker container and deploy it on ElasticBeanstalk. You'll get similar service but at a lower cost.
-
-(and check Julien Simon's great post on how to save even more on AWS sagemaker).
-
-## :warning: DO NOT FORGET TO TERMINATE THE AWS RESOURCES WE CREATED :warning: 
+## Thanks!
