@@ -1,6 +1,8 @@
 # School of AI Geneva
 ## How to Serve a machine learning model with AWS ElasticBeanstalk 
 
+
+
 # Intro
 In this hands-on workshop we will learn how to serve a sentiment analysis model using AWS ElasticBeanstalk 
 
@@ -26,6 +28,7 @@ To deploy our model we will need to use:
 * Python, and in particular Flask, a micro web framework. It is classified as a microframework because it does not require particular tools or libraries. 
 
 
+
 ## AWS Elastic Beanstalk
 ![](images/filename.png)
 
@@ -46,6 +49,8 @@ It uses health checks to detect which instances are healthy and directs traffic 
 Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. 
 
 ![](images/autoscaling.jpeg)
+
+
 
 ## FastText for Sentiment Analysis model
 fastText is a library for learning of word embeddings and text classification created by Facebook's AI Research lab. It is super fast and is on par with more complex, slower algorithms.
@@ -99,6 +104,7 @@ First we need to create an App. An Elastic Beanstalk application is a logical co
 
 ![](images/app.png)
 ![](images/app-2.png)
+
 
 
 ## 2- Create an Environment
@@ -181,6 +187,7 @@ if __name__ == '__main__':
  ```
  
  
+ 
 ### EB Config files
 Our folder '.ebextensions' contains these 2 files:
 
@@ -225,6 +232,7 @@ commands:
 On your app environment, click on Update and Deploy, and upload the zip file containing the application.py and the .ebextensions folder. 
 
 
+
 ## Test if it works
 To test if our model is correctly deployed, simply navigate to the endpoint of the environment. For instance : ServeSentiment-env.qnmpdqf6re.eu-west-1.elasticbeanstalk.com 
 
@@ -244,6 +252,8 @@ We use the Restlet Chrome extension to test our endpoint:
 You should see the result with an HTTP response 200.
 ![](images/test-2.png)
 
+
+
 ## ElasticBeanstalk Vs. SageMaker
 
 ### Amazon SageMaker
@@ -254,7 +264,10 @@ What is SageMaker? Amazon SageMaker is a cloud machine-learning platform that wa
 
 Using AWS Beanstalk is an excellent way to serve a ML model. You get scalability at a very affordable cost. If you're already serving a model using AWS SageMaker, you might consider switching this to EBS to save money.
 
+
 ### Pros and Cons of using Elastic Beanstalk for serving ML models
+
+
 #### Pros:
 * Cheaper: Smallest instance is 10$ a month vs. 50$ for SageMaker.
 * More customization vs. SageMaker. You control and have access to all the underlying resources.
@@ -264,6 +277,8 @@ Using AWS Beanstalk is an excellent way to serve a ML model. You get scalability
 * Faster if you trained in SageMaker and used estimators. Literally just one line of code.
 
 ## That's it - Time to delete the resources created
+
+
 ### :warning: DO NOT FORGET TO TERMINATE THE AWS RESOURCES WE CREATED :warning: 
 * Delete AWS ElasticBeanstalk app. This will also delete the EC2 instance creted.
 * Delete S3 bucket
