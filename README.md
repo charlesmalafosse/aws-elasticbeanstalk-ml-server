@@ -139,17 +139,32 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwa
 We just deployed an elastic Beanstalk sample app. Now we will replace this package with our app.
 
 ### Flask App
-Modify application.py
-Add location of models in your S3 buckets
+Our flask app is contained in the application.py file (on this github repository).
 
-The app has the following functions:
+
+In order to have it working you have to modify the following:
+* Create or use an S3 bucket to store our models.
+We copy our trained models on a S3 bucket. That way, a simple reboot of our instances will ensure that our models are up to date. The models can be found on this github repository.
+* Modify the application.py file to change the following with your S3 bucket name:
+ ```
+s3 = boto3.client('s3')
+download_from_s3(s3, 'YOUR-S3-BUCKET',"model-en.ftz",'/tmp/model-en.ftz')
+download_from_s3(s3, 'YOUR-S3-BUCKET',"model-es.ftz",'/tmp/model-es.ftz')
+download_from_s3(s3, 'YOUR-S3-BUCKET',"model-fr.ftz",'/tmp/model-fr.ftz')
+download_from_s3(s3, 'YOUR-S3-BUCKET',"model-it.ftz",'/tmp/model-it.ftz')
+download_from_s3(s3, 'YOUR-S3-BUCKET',"model-de.ftz",'/tmp/model-de.ftz')    
+ ```
+
+Our Flask app has the following functions:
 * hello(): Root route '/'. For test only.
 * ping(): Determine if the container is working and healthy. In this sample container, we declare
     it healthy if we can load the model successfully.
 * transformation(): Inference on a single batch of data
 
+
 Rest of the code is about text cleaning for better sentiment analysis.
- 
+
+
 Finally the Flask app starts with the following command: 
  ```
 if __name__ == '__main__':
@@ -193,13 +208,6 @@ commands:
     command: "/tmp/pipInstallation.sh"
 ```
 
-
-### S3 file server with models
-
-We store our trained models on a S3 bucket. That way, a simple reboot of our instances will ensure up to date models.
-
-Supported Platform Versions
-All currently supported platform versions are listed in Elastic Beanstalk Supported Platforms. For direct access to the version list of a specific platform, use one of the following links.
 
 
 ## Test if it works
