@@ -143,22 +143,42 @@ Select **Python** for platform.
 Configurations. 
 ![](images/app-6.png)
 
-#### Modify Instance to T3 Micro. 
-This is a newer and cheaper version than the T2 proposed by default. 
+
+#### Modify Instance to T3 Micro
+T3 is a newer and cheaper version than the T2 proposed by default. 
 ![](images/ec2pricing.png)
 
-This page let you specify the instance type or specify a custom AMI (Amazon Machine Images). 
+On the "Instances" configuration page, specify the instance type and specify a custom AMI (Amazon Machine Images) if necessary. 
 ![](images/app-7-instance.png)
 
-#### Modify Scalability.
-We will leave it to default. We'll have a min of 1 instance and up to 4 depending on the metric you defined.
+
+#### Modify Security (optional) 
+Should you need to test anything on your EC2 instances, you might want to specify an EC2 Key pair. These keys are required to be able to connect to your instance.
+
+
+More information here: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
+![](images/security.png)
+
+
+#### Modify Scalability
+We will the Scalability configuration unchanged. Our autoscaling will have a min of 1 instance and up to 4 depending. The number of instances is by a metric that can be modified on this configuration screen.
 
 Instance metrics provide information about the health of instances in your environment. The Elastic Beanstalk health agent runs on each instance. It gathers and relays metrics about instances to Elastic Beanstalk, which analyzes the metrics to determine the health of the instances in your environments.
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html
 ![](images/app-8-scaling.png)
 
-## Deploy a package
+
+#### Create the Environment
+Click on [Create Environment] to start provisioning the resources necessary:
+* An EC2 instance with a running web server and a Flask app.
+* An Autoscaling group
+* A Load Balancer
+These can be seen on the EC2 console: https://eu-west-1.console.aws.amazon.com/ec2/
+
+
+
+## Deploy our own Package
 We just deployed an elastic Beanstalk sample app. Now we will replace this package with our own.
 
 
@@ -246,7 +266,7 @@ commands:
 
 
 ### Zip it and upload/deploy
-On your app environment, click on Update and Deploy, and upload the zip file containing the application.py and the .ebextensions folder. 
+On your app environment, click on [Update and Deploy], and upload the zip file containing the application.py and the .ebextensions folder. 
 
 
 
