@@ -30,7 +30,7 @@ To deploy our model we will need to use:
 * AWS Elastic Beanstalk, a web application deployment service 
 * FastText, a Facebook Research library for text classification.
 * Python, and in particular Flask, a micro web framework. It is classified as a microframework because it does not require particular tools or libraries. 
-![](images/overview.png)
+![](images/archi.png)
 
 
 ## AWS Elastic Beanstalk
