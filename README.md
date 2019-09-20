@@ -202,31 +202,17 @@ Our package contains:
 ### Flask App
 Our flask app is contained in the application.py file (on this github repository).
 
-
-In order to have it working you have to modify the following:
-* Create or use an S3 bucket to store our models.
-We copy our trained models on a S3 bucket. That way, a simple reboot of our instances will ensure that our models are up to date. The models can be found on this github repository.
-* Modify the application.py file to change 'YOUR-S3-BUCKET' with the S3 bucket name that you used to store the models:
- ```
-s3 = boto3.client('s3')
-download_from_s3(s3, 'YOUR-S3-BUCKET',"model-en.ftz",'/tmp/model-en.ftz')
-download_from_s3(s3, 'YOUR-S3-BUCKET',"model-es.ftz",'/tmp/model-es.ftz')
-download_from_s3(s3, 'YOUR-S3-BUCKET',"model-fr.ftz",'/tmp/model-fr.ftz')
-download_from_s3(s3, 'YOUR-S3-BUCKET',"model-it.ftz",'/tmp/model-it.ftz')
-download_from_s3(s3, 'YOUR-S3-BUCKET',"model-de.ftz",'/tmp/model-de.ftz')    
- ```
-
-Our Flask app has the following functions:
+It has the following functions:
 * hello(): Root route '/'. For test only.
 * ping(): Determine if the container is working and healthy. In this sample container, we declare
     it healthy if we can load the model successfully.
 * transformation(): Inference on a single batch of data
+* Other functions deals with text cleaning.
 
 
-Rest of the code is about text cleaning for better sentiment analysis.
+At start, application.py downloads the models from GitHub and store them on the EC2 instance.
 
-
-Finally the Flask app starts with the following command: 
+The app starts with the following command: 
  ```
 if __name__ == '__main__':
     application.run()
