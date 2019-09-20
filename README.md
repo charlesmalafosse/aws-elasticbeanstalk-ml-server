@@ -6,19 +6,23 @@
 # Intro
 In this hands-on workshop we will learn how to serve a sentiment analysis model using AWS ElasticBeanstalk 
 
+
 #### What we will do:
 *	Learn some basics of the AWS ecosystem
 *	Learn how to deploy a basic flask app on AWS ElasticBeanstalk
 *	Learn how to request your server and test your sentiment analysis model
-*	Learn the difference between ElasticBeanstalk and SageMaker to serve a machine learning model. (price/ limitations / benefits).
+*	Learn the difference between ElasticBeanstalk and Amazon SageMaker to serve a machine learning model. (price/ limitations / benefits).
+
 
 #### Goal
-At the end you will have a working server that provides sentiment analysis.
+At the end you will have a working server that provides on-demand sentiment analysis.
+
 
 #### Pre-requisites
 * :warning: An AWS account. Create an AWS account (it's free) before the meetup. Accounts are usually activated within a few minutes, but the process might take up to 24 hours. 
 * Basic knowledge of Python
-* Willingness to spend a few cents to use AWS resources. Please note however that AWS ElasticBeanstalk is free and other resources might fall under AWS free tier program.
+* Willingness to spend a few cents to use AWS resources. Please note however that AWS ElasticBeanstalk is free, you pay for AWS resources (e.g. EC2 instances or S3 buckets), and they might fall under AWS free tier program.
+
 
 # Overview of what we'll need to deploy our model
 
@@ -26,7 +30,7 @@ To deploy our model we will need to use:
 * AWS Elastic Beanstalk, a web application deployment service 
 * FastText, a Facebook Research library for text classification.
 * Python, and in particular Flask, a micro web framework. It is classified as a microframework because it does not require particular tools or libraries. 
-
+![](images/overview.png)
 
 
 ## AWS Elastic Beanstalk
@@ -38,12 +42,14 @@ Simply upload your code and Elastic Beanstalk automatically handles the deployme
 
 :computer: **TO-DO:** Create an AWS account to access Elastic Beanstalk
 
+
 ### Load balancer
 A load balancer distributes incoming application or network traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses, in multiple Availability Zones.
 
 ![](images/elb.png)
 
 It uses health checks to detect which instances are healthy and directs traffic only across those instances.
+
 
 ### Autoscaling
 Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. 
@@ -58,17 +64,23 @@ fastText is a library for learning of word embeddings and text classification cr
 Our model was created with the fastText library provided by Facebook Research. We believe it's great choice for a production ready model. 
 
 This is not the goal of this tutorial but we wrote an article showing you how to do that.
-To reproduce the model, check here: https://medium.com/@media_73863/fasttext-sentiment-analysis-for-tweets-a-straightforward-guide-9a8c070449a2
-To download the trained models in English, French, Spanish, Italian and German, check this reporitory.
+To reproduce the model, check here: https://medium.com/@charlesmalafosse/fasttext-sentiment-analysis-for-tweets-a-straightforward-guide-9a8c070449a2
+To download the trained models in English, French, Spanish, Italian and German, check this GitHub reporitory.
+
 
 :computer: **OPTIONAL:** Install fastText on your machine if you want to run locally the python code.
 
-:warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows. Install directly from the fastTest github page.
+
+:warning: :warning: To install fastText for Python, do **NOT** use "pip install". This installs an incorrect version for Windows.
+
+
+Install directly from the fastTest github page.
 ```
 git clone https://github.com/facebookresearch/fastText.git
 cd fastText
 sudo pip install .
 ```
+
 
 ## Python micro web framework Flask
 Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries.
@@ -86,6 +98,7 @@ if __name__ == "__main__":
     app.run()
 ```
 
+
  And it's simple to install
  ```
  pip install Flask
@@ -98,9 +111,10 @@ Now is time to use AWS ElasticBeanstalk to serve multiple sentiment analysis mod
 
 https://console.aws.amazon.com/elasticbeanstalk/
 
+
 ## 1- Create an App
 
-First we need to create an App. An Elastic Beanstalk application is a logical collection of Elastic Beanstalk components, including environments, versions, and environment configurations. In Elastic Beanstalk an application is conceptually similar to a folder.
+First we need to **create an App**. An Elastic Beanstalk App is a logical collection of Elastic Beanstalk components, including environments, versions, and environment configurations. In Elastic Beanstalk an application is conceptually **similar to a folder**.
 
 ![](images/app.png)
 ![](images/app-2.png)
@@ -114,6 +128,7 @@ Now we need to create an environment. An environment is a collection of AWS reso
 :grey_exclamation: When you create an environment, Elastic Beanstalk provisions the resources needed to run the application version you specified.
 
 ![](images/app-3.png)
+
 
 Select **Web Server Environment**.
 
@@ -130,6 +145,8 @@ Configurations.
 
 #### Modify Instance to T3 Micro. 
 This is a newer and cheaper version than the T2 proposed by default. 
+![](images/ec2pricing.png)
+
 This page let you specify the instance type or specify a custom AMI (Amazon Machine Images). 
 ![](images/app-7-instance.png)
 
