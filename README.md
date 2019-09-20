@@ -24,6 +24,7 @@ At the end you will have a working server that provides on-demand sentiment anal
 * Willingness to spend a few cents to use AWS resources. Please note however that AWS ElasticBeanstalk is free, you pay for AWS resources (e.g. EC2 instances or S3 buckets), and they might fall under AWS free tier program.
 
 
+
 # Overview of what we'll need to deploy our model
 
 To deploy our model we will need to use:
@@ -31,6 +32,8 @@ To deploy our model we will need to use:
 * FastText, a Facebook Research library for text classification.
 * Python, and in particular Flask, a micro web framework. It is classified as a microframework because it does not require particular tools or libraries. 
 ![](images/archi.png)
+
+
 
 
 ## AWS Elastic Beanstalk
@@ -41,6 +44,7 @@ AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web ap
 Simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, **load balancing**, **auto-scaling** to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.
 
 :computer: **TO-DO:** Create an AWS account to access Elastic Beanstalk
+
 
 
 ### Load balancer
