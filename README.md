@@ -37,11 +37,15 @@ To deploy our model we will need to use:
 
 
 ## AWS Elastic Beanstalk
-![](images/filename.png)
+
 
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
 
 Simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, **load balancing**, **auto-scaling** to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.
+
+
+![](images/filename.png)
+
 
 :computer: **TO-DO:** Create an AWS account to access Elastic Beanstalk
 
