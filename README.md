@@ -226,6 +226,7 @@ if __name__ == '__main__':
  
  
 ### EB Config files
+You can add AWS Elastic Beanstalk configuration files (.ebextensions) to your web application's source code to configure your environment and customize the AWS resources that it contains. 
 Our folder '.ebextensions' contains these 2 files:
 
 
