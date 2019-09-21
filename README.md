@@ -162,7 +162,7 @@ On the "Instances" configuration page, specify the instance type and specify a c
 
 
 #### Modify Security (optional) 
-Should you need to test anything on your EC2 instances, you might want to specify an EC2 Key pair. These keys are required to be able to connect to your instance. Depending on the Security Group of your instances, you might also have to update it to allow external connections.
+Should you need to test anything on your EC2 instances, you might want to specify an EC2 Key pair. These keys are required to be able to connect to your instance. You might also have to check that the security Group linked to your instances allows external connections.
 
 
 More information here: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
