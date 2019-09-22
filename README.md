@@ -196,6 +196,7 @@ Our package contains:
 * A folder '.ebextensions' with Elastic Beanstalk config files.
     * A file '00_application.config': This will be executed before our instance is running.
     * A file '01_pip-install.config': This will be executed after our instance is running and will create our python environment.
+    * A file '02_wsgi.config': This will be executed after our instance and before our web server is started. it will create a custom config for our WSGI that fixes a thread safety issue with libraries such as Pandas or Numpy. 
 
 
 
@@ -222,7 +223,7 @@ if __name__ == '__main__':
  
 ### EB Config files
 You can add AWS Elastic Beanstalk configuration files (.ebextensions) to your web application's source code to configure your environment and customize the AWS resources that it contains. 
-Our folder '.ebextensions' contains these 2 files:
+Our folder '.ebextensions' contains these 3 files:
 
 
 * 00_application.config
@@ -261,6 +262,19 @@ commands:
 ```
 
 
+* 02_wsgi.config
+```
+files:
+  "/etc/httpd/conf.d/wsgi_custom.conf":
+    mode: "000644"
+    owner: root
+    group: root
+    content: |
+      WSGIApplicationGroup %{GLOBAL}
+```
+
+
+
 ### Zip it and upload/deploy
 On your app environment, click on [Update and Deploy], and upload the zip file containing the application.py and the .ebextensions folder. 
 
@@ -270,7 +284,7 @@ On your app environment, click on [Update and Deploy], and upload the zip file c
 To test if our model is correctly deployed, simply navigate to the endpoint of the environment. For instance : ServeSentiment-env.qnmpdqf6re.eu-west-1.elasticbeanstalk.com 
 
 
-You should see: "Welcome to your Sentiment Analysis Tool".
+You should see: "Welcome to your own Sentiment Analysis Tool".
 
 
 Finally to test our model we will use a POST method on the resource "/invocations" defined in our Flask app. Make sure you pass the following payload: 
