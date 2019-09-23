@@ -2,6 +2,8 @@
 ## How to Serve a machine learning model with AWS ElasticBeanstalk 
 
 
+https://github.com/charlesmalafosse/aws-elasticbeanstalk-ml-server
+
 
 # Intro
 In this hands-on workshop we will learn how to serve a sentiment analysis model using AWS ElasticBeanstalk 
