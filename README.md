@@ -291,7 +291,7 @@ You should see: "Welcome to your own Sentiment Analysis Tool".
 
 Finally to test our model we will use a POST method on the resource "/invocations" defined in our Flask app. Make sure you pass the following payload: 
 ```
-    {text:"This is great!",language:"US"}
+    {"text":"This is great!","language":"US"}
 ```
 
 
