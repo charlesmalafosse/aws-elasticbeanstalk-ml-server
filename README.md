@@ -1,9 +1,9 @@
-# School of AI Geneva
+# Tutorial for AI Geneva Meetup
 ## How to Serve a machine learning model with AWS ElasticBeanstalk 
-
-
 https://github.com/charlesmalafosse/aws-elasticbeanstalk-ml-server
 
+## Support me on Medium
+Become a member on Medium and support my work (affiliate link): https://medium.com/@charlesmalafosse/membership
 
 # Intro
 In this hands-on workshop we will learn how to serve a sentiment analysis model using AWS ElasticBeanstalk 
